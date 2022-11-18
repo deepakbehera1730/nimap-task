@@ -1,0 +1,54 @@
+Microsoft Windows [Version 10.0.19045.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\hp>cd c;
+The system cannot find the path specified.
+
+C:\Users\hp>cd c
+The system cannot find the path specified.
+
+C:\Users\hp>cd..
+
+C:\Users>cd..
+
+C:\>cd deepak
+
+C:\deepak>javac HelloWorld.java
+HelloWorld.java:1: error: class, interface, enum, or record expected
+Package world;
+^
+1 error
+
+C:\deepak>javac HelloWorld.java
+HelloWorld.java:1: error: class, interface, enum, or record expected
+Package world;
+^
+1 error
+
+C:\deepak>javac HelloWorld.java
+
+C:\deepak>javac -d . HelloWorld.java
+
+C:\deepak>java world.Helloworld
+Error: Could not find or load main class world.Helloworld
+Caused by: java.lang.NoClassDefFoundError: world/HelloWorld (wrong name: world/Helloworld)
+
+C:\deepak>java world.HelloWorld
+hii i am deepak
+
+C:\deepak>javac World.java
+
+C:\deepak>java World
+Error: Could not find or load main class World
+Caused by: java.lang.NoClassDefFoundError: world/World (wrong name: World)
+
+C:\deepak>java world.World
+Error: Could not find or load main class world.World
+Caused by: java.lang.ClassNotFoundException: world.World
+
+C:\deepak>javac -d . World.java
+
+C:\deepak>java world.World
+hii i am tejas
+
+C:\deepak>
