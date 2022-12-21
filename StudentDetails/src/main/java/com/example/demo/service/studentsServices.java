@@ -8,16 +8,16 @@ public interface studentsServices {
 
 	public List<Student> GetallStudent();
 
-	public Student getById(int id);
+	public Student getById(int id) throws Exception;;
 
 	public Student AddDetails(Student student);
 
-	public Student Update(int id, Student name) throws Exception
-	;
+	public Student Update(int id, Student name) throws Exception;
 
 	public void Deletedata(int id);
-	
+
 	public List<Student> getdatabyname(String name);
-	public List<Student> allPagination(int pageNo,int PageSize,String sortBy);
+
+	public List<Student> allPagination(int pageNo, int PageSize, String sortBy);
 
 }

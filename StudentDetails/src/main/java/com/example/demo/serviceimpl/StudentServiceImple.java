@@ -18,9 +18,9 @@ import com.example.demo.service.studentsServices;
 public class StudentServiceImple implements studentsServices {
 
 	@Autowired
-	
+
 	private Studentrepo studentrepo;
-	
+
 	@Override
 	public List<Student> GetallStudent() {
 		// TODO Auto-generated method stub
@@ -28,53 +28,49 @@ public class StudentServiceImple implements studentsServices {
 	}
 
 	@Override
-	public Optional<Student> getById(int id)  {
-		return studentrepo.findById(id);
+	public Student getById(int id) throws Exception {
+		return studentrepo.findById(id).orElseThrow(() -> new Exception("id dosen't exits"));
 	}
-	
+
 	@Override
 	public Student AddDetails(Student student) {
 		// TODO Auto-generated method stub
-	return studentrepo.save(student);
-	
-		
+		return studentrepo.save(student);
+
 	}
 
 	@Override
 	public Student Update(int id, Student name) throws Exception {
 		// TODO Auto-generated method stub
-		Student c=studentrepo.findById(id).orElseThrow(()->new Exception("id dosen't exits"));
+		Student c = studentrepo.findById(id).orElseThrow(() -> new Exception("id dosen't exits"));
+		c.setStudentId(name.getStudentId());
 		c.setStudentDept(name.getStudentDept());
 		c.setStudentName(name.getStudentName());
-		return null;
+		studentrepo.save(c);
+		return name;
 	}
 
 	@Override
 	public void Deletedata(int id) {
 		// TODO Auto-generated method stub
 		studentrepo.deleteById(id);
-		
+
 	}
 
 	@Override
 	public List<Student> getdatabyname(String studentName) {
 		// TODO Auto-generated method stub
-		return  studentrepo.findBystudentName(studentName);
+		return studentrepo.findBystudentName(studentName);
 	}
 
 	@Override
-	public List<Student> allPagination(int pageNo, int PageSize,String sortBy) {
+	public List<Student> allPagination(int pageNo, int PageSize, String sortBy) {
 		// TODO Auto-generated method stub
-		Pageable p=PageRequest.of(pageNo - 1, PageSize,Sort.by(sortBy).ascending());
-		Page<Student> S=studentrepo.findAll(p);
-		
+		Pageable p = PageRequest.of(pageNo - 1, PageSize, Sort.by(sortBy).ascending());
+		Page<Student> S = studentrepo.findAll(p);
+
 		List<Student> page = S.getContent();
 		return page;
 	}
-
-	
-
-	
-	
 
 }
