@@ -10,7 +10,6 @@ public static void main(String args[]) {
 	t1.add("B");
 	
 	System.out.println(t1.poll());
-//	t1.push("k");
 	System.out.println(t1);
 	System.out.println(t1.peek());
 	System.out.println(t1.pop());

@@ -15,7 +15,7 @@ public class vector {
 		{
 			System.out.println(x.next());
 		}
-		System.out.println(stack.pop());
+System.out.println(stack.pop());
 		System.out.println(stack.get(0));
 		System.out.println(stack);
 	
@@ -23,6 +23,7 @@ public class vector {
 		J.add(null);
 		J.add(1, 4);
 		J.add(2,"heloo");
+		System.out.println(J.capacity());
 	
 		
 			System.out.println(J);

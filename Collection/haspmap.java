@@ -17,6 +17,7 @@ public static void main(String args[])
 	System.out.println(hash.containsValue("meraj"));
 	System.out.println(hash.isEmpty());
 	System.out.println(hash.keySet());
+//	System.out.println(hash.entrySet());
 	// entry method
 	for(Map.Entry entry:hash.entrySet())
 	{
